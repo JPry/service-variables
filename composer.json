@@ -1,0 +1,26 @@
+{
+    "authors": [
+        {
+            "name": "Jeremy Pry",
+            "email": "jeremy.pry@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "HA\\": "src/"
+        }
+    },
+    "description": "Used for creating service variable text sheets in Orthodox Christian worship.",
+    "license": "MIT",
+    "name": "ha/service_variables",
+    "require": {
+        "symfony/console": "2.5.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*",
+        "phpdocumentor/phpdocumentor": "2.*",
+        "fabpot/php-cs-fixer": "*",
+        "squizlabs/php_codesniffer": "*"
+    },
+    "version": "0.1"
+}
