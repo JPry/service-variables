@@ -93,17 +93,50 @@ class ConstructCommand extends Command
         '8' => '159',
     );
     protected $doxasticon = array(
-        '1'  => '166',
-        '2'  => '169',
-        '3'  => '172',
-        '4'  => '176',
-        '5'  => '179',
-        '6'  => '182',
-        '7'  => '185',
-        '8'  => '188',
-        '9'  => '191',
-        '10' => '194',
-        '11' => '197'
+        '1'  => array(
+            'tone' => '1',
+            'page' => '166',
+        ),
+        '2'  => array(
+            'tone' => '2',
+            'page' => '169',
+        ),
+        '3'  => array(
+            'tone' => '3',
+            'page' => '172',
+        ),
+        '4'  => array(
+            'tone' => '4',
+            'page' => '176',
+        ),
+        '5'  => array(
+            'tone' => '5',
+            'page' => '179',
+        ),
+        '6'  => array(
+            'tone' => '6',
+            'page' => '182',
+        ),
+        '7'  => array(
+            'tone' => '7',
+            'page' => '185',
+        ),
+        '8'  => array(
+            'tone' => '8',
+            'page' => '188',
+        ),
+        '9'  => array(
+            'tone' => '5',
+            'page' => '191',
+        ),
+        '10' => array(
+            'tone' => '6',
+            'page' => '194',
+        ),
+        '11' => array(
+            'tone' => '8',
+            'page' => '197',
+        ),
     );
 
     protected function configure()
