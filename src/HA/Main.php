@@ -4,8 +4,6 @@ namespace HA;
 
 use HA\Command\ConstructCommand;
 use Symfony\Component\Console\Application;
-use Symfony\Component\Console\Input\InputDefinition;
-use Symfony\Component\Console\Input\InputInterface;
 
 class Main extends Application
 {
