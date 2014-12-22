@@ -307,6 +307,15 @@ class ConstructCommand extends Command
             $output->writeln('    - Troparion - Tone ' . $troparion);
         }
     }
+
+    /**
+     * Validate that a tone is between 1 and 8.
+     *
+     * @throws \RuntimeException When the value is not between 1 and 8.
+     *
+     * @param int $answer The given value.
+     * @return int The given value.
+     */
     public function toneQuestionValidator($answer)
     {
         $answer = (int) $answer;
