@@ -208,12 +208,7 @@ class ConstructCommand extends Command
             $question = new Question('Enter tone of the week: ');
             $question->setValidator(array($this, 'toneQuestionValidator'));
             $tone = $helper->ask($input, $output, $question);
-        } else {
-            $output->writeln("We have a tone!");
-            $tone = $input->getArgument('tone');
         }
-        $output->writeln("The tone is " . $tone);
-    }
 
 
     public function toneQuestionValidator($answer)
