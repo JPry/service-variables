@@ -182,4 +182,16 @@ class ConstructCommand extends Command
         }
         return $answer;
     }
+
+    /**
+     * Pad a string and append 'p. ' to the end of it.
+     *
+     * @param string $string  The string to pad
+     * @param int    $padding The padding amount. Defaults to 50.
+     * @return string The padded string.
+     */
+    private function addPadding($string, $padding = 50)
+    {
+        return str_pad($string, $padding, '.') . 'p. ';
+    }
 }
