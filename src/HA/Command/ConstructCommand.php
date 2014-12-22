@@ -198,7 +198,13 @@ class ConstructCommand extends Command
         // Set up question helper
         $helper = $this->getHelper('question');
 
-        if (!$input->getArgument('tone')) {
+        // Set the date
+        if (!$date = $input->getOption('date')) {
+            $date = strtotime('next Sunday');
+        }
+
+        // Check for the tone of the week
+        if (!$tone = $input->getArgument('tone')) {
             $question = new Question('Enter tone of the week: ');
             $question->setValidator(array($this, 'toneQuestionValidator'));
             $tone = $helper->ask($input, $output, $question);
