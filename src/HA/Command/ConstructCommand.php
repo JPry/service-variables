@@ -210,6 +210,45 @@ class ConstructCommand extends Command
             $tone = $helper->ask($input, $output, $question);
         }
 
+        // Check for the Eothinon
+        if (!$eothinon = $input->getArgument('eothinon')) {
+            $question = new Question('Enter the Eothinon of the week: ');
+            $eothinon = $helper->ask($input, $output, $question);
+        }
+
+        // Get saints
+        $saints = $input->getOption('saints');
+
+        // Possible variables
+        if (!$doxastikon = $input->getOption('doxastikon')) {
+            $doxastikon = $eothinon;
+        }
+
+        if (!$kathismata = $input->getOption('kathismata')) {
+            $kathismata = $tone;
+        }
+
+        $custom_troparion = true;
+        if (!$great_doxology = $input->getOption('great_doxology')) {
+            $great_doxology = $tone;
+            $custom_troparion = false;
+        }
+
+        switch ($tone) {
+            case '1':
+            case '2':
+            case '3':
+            case '4':
+                $troparion = '4';
+                break;
+            case '5':
+            case '6':
+            case '7':
+            case '8':
+                $troparion = '8';
+                break;
+        }
+
 
     public function toneQuestionValidator($answer)
     {
