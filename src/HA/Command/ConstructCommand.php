@@ -249,7 +249,64 @@ class ConstructCommand extends Command
                 break;
         }
 
+        /*
+         * Below here is all of the output.
+         */
 
+        // Header
+        $output->writeln("\n");
+        $output->writeln(date('F d, Y', $date));
+        $output->writeln('Tone: ' . $tone);
+        $output->writeln('Eothinon: ' . $eothinon);
+
+        // Saints
+        foreach ($saints as $saint) {
+            $output->writeln($saint);
+        }
+
+        $output->writeln('');
+        $output->writeln("==============================");
+        $output->writeln('');
+
+        // Variables
+        $output->writeln('ORTHROS');
+        $output->writeln('======');
+        $output->writeln($this->addPadding('GOD IS THE LORD - Tone ' . $tone) . $this->god_is_the_lord[$tone]);
+        $output->writeln('    - Resurrectional Troparion - Tone ' . $tone);
+        $output->writeln('    - ');
+
+        // @todo: other variables here
+
+        $output->writeln($this->addPadding('LITTLE LITTANY') . $this->little_ektenia);
+        $output->writeln($this->addPadding('KATHISMATA - Tone ' . $kathismata) . $this->kathismata[$kathismata]);
+        $output->writeln($this->addPadding('EVLOGETARIA - Tone 5') . $this->evlogetaria);
+        $output->writeln($this->addPadding('LITTLE LITTANY') . $this->little_ektenia_2);
+        $output->writeln($this->addPadding('HYPAKOE & PROKEIMENON - Tone ' . $tone) . $this->hypakoe[$tone]);
+        $output->writeln($this->addPadding('ORTHROS GOSPEL, etc.') . $this->orthros_gospel);
+
+        // @todo: don't hard-code canon
+        $output->writeln('');
+        $output->writeln('CANON:   ' . $this->canon[1]);
+        $output->writeln('');
+
+        $output->writeln('EXAPOSTEILARIA');
+        $output->writeln($this->addPadding("    - Litany & 'Holy is the Lord'") . $this->little_ektenia_3[0]);
+        $output->writeln($this->addPadding("    - Exaposteilarion {$eothinon}") . $this->exaposteilarion[$eothinon]);
+        $output->writeln("    - Theotokion {$eothinon}");
+        $output->writeln('');
+
+        $output->writeln($this->addPadding('PRAISES - Tone ' . $tone) . $this->praises[$tone]);
+        $output->writeln(
+            $this->addPadding(
+                'DOXASTIKON - Tone ' . $this->doxasticon[$doxastikon]['tone']
+            ) . $this->doxasticon[$doxastikon]['page']
+        );
+
+        $output->writeln('GREAT DOXOLOGY - Tone ' . $great_doxology);
+        if ($custom_troparion) {
+            $output->writeln('    - Troparion - Tone ' . $troparion);
+        }
+    }
     public function toneQuestionValidator($answer)
     {
         $answer = (int) $answer;
