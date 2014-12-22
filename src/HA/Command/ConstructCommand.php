@@ -149,11 +149,47 @@ class ConstructCommand extends Command
                  'Tone of the week',
                  null
              )
-             ->addOption(
+             ->addArgument(
                  'eothinon',
+                 InputArgument::OPTIONAL,
+                 'The Eothinon for the week. Sets the Exaposteilarion and Doxasticon.',
+                 null
+             )
+             ->addOption(
+                 'canon',
                  null,
                  InputOption::VALUE_REQUIRED,
-                 'The Eothinon for the week. Sets the Exaposteilarion and Doxasticon.'
+                 'The Canon for the service. Valid options are "Akathist", "Nativity", or "Cross"'
+             )
+             ->addOption(
+                 'date',
+                 null,
+                 InputOption::VALUE_REQUIRED,
+                 'The date of the service. Use quotes to enter a human-readable date. Defaults to the next Sunday.'
+             )
+             ->addOption(
+                 'saints',
+                 null,
+                 InputOption::VALUE_REQUIRED | InputOption::VALUE_IS_ARRAY,
+                 'The saint of the day. Multiple saints can be specified by using this option multiple times.'
+             )
+             ->addOption(
+                 'doxastikon',
+                 null,
+                 InputOption::VALUE_REQUIRED,
+                 'Set a Doxastikon different from the one given by the Eothinon. Valid numbers 1-11.'
+             )
+             ->addOption(
+                 'kathismata',
+                 null,
+                 InputOption::VALUE_REQUIRED,
+                 'Set a Kathismata different from the one given by the Tone of the week.'
+             )
+             ->addOption(
+                 'great_doxology',
+                 null,
+                 InputOption::VALUE_REQUIRED,
+                 'Tone for the Great Doxology. Valid numbers 1-8'
              );
     }
 
